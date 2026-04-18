@@ -530,7 +530,7 @@ section{padding:72px 0}
       <p style="font-size:.74rem;color:var(--text-muted);margin-top:8px;margin-bottom:48px">※住所は本登録時にお伺いします。この段階では不要です。</p>
     </div>
     <div class="form-wrap rv d1">
-      <form class="form-box" id="regForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="form-box" id="regForm" action="https://formspree.io/f/mrerqdoa" method="POST">
         <input type="hidden" name="_subject" value="【SELENE CREATORS】クリエイター登録">
         <input type="hidden" name="_replyto" id="replyto">
         <div class="fg"><label>お名前（ニックネーム可）<span style="color:var(--accent);margin-left:4px;">*</span></label><input type="text" name="お名前" placeholder="例：Yuki" required></div>
@@ -568,22 +568,37 @@ try{
 }catch(e){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('show')})}
 setTimeout(function(){document.querySelectorAll('.rv:not(.show)').forEach(function(el){el.classList.add('show')})},2000);
 
-function openMail(){
-  var addr = ['selene.official.japan','gmail.com'].join('@');
-  var subj = encodeURIComponent('【SELENE CREATORS】クリエイター登録');
-  var body = encodeURIComponent(
-    '【クリエイター登録】\n\n' +
-    '1. お名前：\n\n' +
-    '2. メールアドレス：\n\n' +
-    '3. Instagram：@\n\n' +
-    '4. TikTok：@\n\n' +
-    '5. 発信ジャンル：\n\n' +
-    '6. ひとこと：\n\n' +
-    '---\n' +
-    'SELENE CREATORS クリエイター登録フォームより'
-  );
-  window.location.href = 'mai' + 'lto:' + addr + '?subject=' + subj + '&body=' + body;
-}
+// Form submission
+var form = document.getElementById('regForm');
+form.addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var btn = document.getElementById('submitBtn');
+  var emailVal = document.getElementById('emailInput').value;
+  document.getElementById('replyto').value = emailVal;
+  btn.textContent = '送信中...';
+  btn.disabled = true;
+
+  var data = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(res){
+    if(res.ok){
+      form.style.display = 'none';
+      document.getElementById('formOk').classList.add('on');
+    } else {
+      alert('送信に失敗しました。お手数ですが selene.official.japan@gmail.com まで直接ご連絡ください。');
+      btn.textContent = '登録する';
+      btn.disabled = false;
+    }
+  }).catch(function(){
+    alert('通信エラーが発生しました。お手数ですが selene.official.japan@gmail.com まで直接ご連絡ください。');
+    btn.textContent = '登録する';
+    btn.disabled = false;
+  });
+});
 </script>
 
 </body>
