@@ -526,61 +526,28 @@ section{padding:72px 0}
     <div class="rv sec-center">
       <div class="sec-label">Entry</div>
       <h2 class="sec-title">クリエイター登録</h2>
-      <p class="sec-sub">以下の内容をご確認のうえ、登録ボタンを押してください。<br>メールアプリが開きますので、各項目を記入して送信するだけです。</p>
+      <p class="sec-sub">以下を入力して送信してください。<br>登録順に審査を行い、Instagram DMでご連絡いたします。</p>
       <p style="font-size:.74rem;color:var(--text-muted);margin-top:8px;margin-bottom:48px">※住所は本登録時にお伺いします。この段階では不要です。</p>
     </div>
     <div class="form-wrap rv d1">
-      <div class="form-box">
-        <h3 style="font-size:.9rem;font-weight:700;color:var(--text-primary);margin-bottom:24px;">記入いただく内容</h3>
-        <div class="entry-items">
-          <div class="entry-row">
-            <div class="entry-num">1</div>
-            <div>
-              <div class="entry-label">お名前（ニックネーム可）</div>
-              <div class="entry-hint">必須</div>
-            </div>
-          </div>
-          <div class="entry-row">
-            <div class="entry-num">2</div>
-            <div>
-              <div class="entry-label">メールアドレス</div>
-              <div class="entry-hint">必須 — ご連絡用</div>
-            </div>
-          </div>
-          <div class="entry-row">
-            <div class="entry-num">3</div>
-            <div>
-              <div class="entry-label">Instagramアカウント名</div>
-              <div class="entry-hint">必須 — @から始まるID</div>
-            </div>
-          </div>
-          <div class="entry-row">
-            <div class="entry-num">4</div>
-            <div>
-              <div class="entry-label">TikTokアカウント名</div>
-              <div class="entry-hint">任意</div>
-            </div>
-          </div>
-          <div class="entry-row">
-            <div class="entry-num">5</div>
-            <div>
-              <div class="entry-label">発信ジャンル</div>
-              <div class="entry-hint">美容・コスメ / スキンケア / ライフスタイル / ファッション / その他</div>
-            </div>
-          </div>
-          <div class="entry-row">
-            <div class="entry-num">6</div>
-            <div>
-              <div class="entry-label">ひとこと</div>
-              <div class="entry-hint">任意 — 自己紹介や意気込みなど</div>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="form-btn" style="margin-top:28px;border:none;cursor:pointer;" onclick="openMail()">
-          登録メールを開く
-          <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <form class="form-box" id="regForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="【SELENE CREATORS】クリエイター登録">
+        <input type="hidden" name="_replyto" id="replyto">
+        <div class="fg"><label>お名前（ニックネーム可）<span style="color:var(--accent);margin-left:4px;">*</span></label><input type="text" name="お名前" placeholder="例：Yuki" required></div>
+        <div class="fg"><label>メールアドレス<span style="color:var(--accent);margin-left:4px;">*</span></label><input type="email" name="メールアドレス" id="emailInput" placeholder="例：you@example.com" required></div>
+        <div class="fg"><label>Instagramアカウント名<span style="color:var(--accent);margin-left:4px;">*</span></label><div class="fg-prefix"><span>@</span><input type="text" name="Instagram" placeholder="例：your_account" required></div></div>
+        <div class="fg"><label>TikTokアカウント名（任意）</label><div class="fg-prefix"><span>@</span><input type="text" name="TikTok" placeholder="例：your_tiktok"></div></div>
+        <div class="fg"><label>発信ジャンル</label><select name="発信ジャンル"><option value="">選択してください</option><option value="美容・コスメ">美容・コスメ</option><option value="スキンケア">スキンケア</option><option value="ライフスタイル">ライフスタイル</option><option value="ファッション">ファッション</option><option value="その他">その他</option></select></div>
+        <div class="fg"><label>ひとこと（任意）</label><textarea name="ひとこと" rows="3" placeholder="自己紹介や意気込みなど"></textarea></div>
+        <p class="fg-note">送信いただいた情報は、審査およびご連絡の目的にのみ使用いたします。</p>
+        <button type="submit" class="form-btn" id="submitBtn">
+          登録する
+          <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </button>
-        <p style="font-size:.72rem;color:var(--text-muted);text-align:center;margin-top:16px;">メールアプリが開きます。各項目を記入して送信してください。</p>
+      </form>
+      <div class="form-ok" id="formOk">
+        <p>✓ 登録ありがとうございます！</p>
+        <p>審査のうえ、Instagram DMでご連絡いたします。<br>応募多数の場合はお時間をいただくことがありますが、<br>必ず全員にご連絡いたします。</p>
       </div>
     </div>
   </div>
