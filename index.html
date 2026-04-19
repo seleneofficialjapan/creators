@@ -1,123 +1,605 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SELENE CREATORS Community | あなたの発信を、仕事に変える。</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=Shippori+Mincho:wght@400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>SELENE CREATORS | クリエイター募集</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0b10;--bg2:#101018;--surf:rgba(255,255,255,0.03);--surf2:rgba(255,255,255,0.05);--glow1:#8b7cf0;--glow2:#c084fc;--glow3:#6ee7b7;--text:#eae8f0;--text2:#a8a4b8;--text3:#6a6680;--border:rgba(255,255,255,0.06);--border2:rgba(139,124,240,0.2);--grad-glow:linear-gradient(135deg,var(--glow1),var(--glow2));--ff-d:'Syne',sans-serif;--ff-jp:'Shippori Mincho',serif;--ff-b:'DM Sans',sans-serif;--radius:16px}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--ff-b);font-weight:400;line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
-.ct{max-width:1040px;margin:0 auto;padding:0 28px}a{color:inherit;text-decoration:none}
-.rv{opacity:1;transform:translateY(0)}.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}.js .rv.show{opacity:1;transform:translateY(0)}.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.28s}
+  :root {
+    --bg: #faf9f7;
+    --bg-card: #ffffff;
+    --bg-warm: #f3f0eb;
+    --bg-accent: #f7f3ed;
+    --accent: #9a7e5a;
+    --accent-light: #b8a07a;
+    --accent-warm: #c4a87c;
+    --accent-pale: rgba(154,126,90,0.08);
+    --text-primary: #2c2824;
+    --text-body: #4a4440;
+    --text-muted: #8a847e;
+    --border: rgba(154,126,90,0.15);
+    --border-accent: rgba(154,126,90,0.3);
+    --ff-display: 'Cormorant Garamond', serif;
+    --ff-jp: 'Shippori Mincho', serif;
+    --ff-body: 'Zen Kaku Gothic New', sans-serif;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text-primary);font-family:var(--ff-body);font-weight:400;line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  .container{max-width:1060px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+/* ═══ REVEAL ═══ */
+.rv{opacity:1;transform:translateY(0)}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.show{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.25s}.d4{transition-delay:.35s}
+
+/* ═══ SECTION COMMON ═══ */
 section{padding:100px 0}
-.sl{font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;background:var(--grad-glow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
-.sh{font-family:var(--ff-jp);font-weight:600;font-size:clamp(1.35rem,3vw,2rem);line-height:1.6;letter-spacing:.06em;margin-bottom:16px}
-.ss{font-size:.88rem;max-width:560px;line-height:2.1;color:var(--text2)}.tc{text-align:center}.tc .ss{margin:0 auto}
-.hr{height:1px;background:var(--border);max-width:1040px;margin:0 auto}
-.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 28px 100px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(139,124,240,0.08),rgba(192,132,252,0.04) 40%,transparent 65%);pointer-events:none}
-.hero>*{position:relative;z-index:1}
-.hero-badge{font-family:var(--ff-d);font-size:.72rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--glow1);padding:10px 28px;margin-bottom:40px;background:var(--surf2);border:1px solid var(--border2);border-radius:40px;backdrop-filter:blur(12px);opacity:0;animation:hf 1s .2s forwards}
-.hero h1{font-family:var(--ff-d);font-weight:800;font-size:clamp(2rem,5.5vw,4rem);line-height:1.12;letter-spacing:-.01em;opacity:0;animation:hf 1s .4s forwards}
-.hero h1 em{font-style:normal;background:var(--grad-glow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-lead{font-family:var(--ff-jp);font-weight:400;font-size:clamp(.86rem,1.4vw,.98rem);color:var(--text2);letter-spacing:.06em;line-height:2.2;margin-top:24px;max-width:460px;opacity:0;animation:hf 1s .6s forwards}
-.hero-cta{display:inline-flex;align-items:center;gap:12px;margin-top:40px;font-family:var(--ff-d);font-size:.82rem;font-weight:700;letter-spacing:.12em;color:var(--bg);background:var(--grad-glow);padding:17px 48px;border-radius:50px;border:none;cursor:pointer;transition:all .45s;opacity:0;animation:hf 1s .8s forwards;box-shadow:0 8px 32px rgba(139,124,240,0.2)}
-.hero-cta:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(139,124,240,0.3)}
+.sec-label{font-family:var(–ff-display);font-size:.68rem;font-weight:600;letter-spacing:.5em;text-transform:uppercase;color:var(–accent);margin-bottom:14px}
+.sec-title{font-family:var(–ff-jp);font-weight:600;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.55;letter-spacing:.06em;color:var(–text-primary);margin-bottom:16px}
+.sec-sub{font-size:.9rem;color:var(–text-body);max-width:560px;line-height:2}
+.sec-center{text-align:center}.sec-center .sec-sub{margin:0 auto}
+.sec-warm{background:var(–bg-warm)}
+.hr{height:1px;background:var(–border);max-width:1060px;margin:0 auto}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 28px;position:relative;overflow:hidden}
+.hero::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(154,126,90,.06),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(154,126,90,.04),transparent 50%)}
+.hero>*{position:relative}
+.hero-badge{font-family:var(–ff-display);font-size:.72rem;font-weight:500;letter-spacing:.45em;text-transform:uppercase;color:var(–accent);border:1px solid var(–border-accent);padding:9px 28px;margin-bottom:36px;opacity:0;animation:fade 1s .2s forwards}
+.hero h1{font-family:var(–ff-display);font-weight:400;font-size:clamp(2.2rem,5.5vw,4.4rem);line-height:1.12;letter-spacing:.06em;color:var(–text-primary);opacity:0;animation:fade 1s .4s forwards}
+.hero h1 i{font-style:italic;color:var(–accent)}
+.hero-lead{font-family:var(–ff-jp);font-weight:500;font-size:clamp(.86rem,1.5vw,1.02rem);color:var(–text-body);letter-spacing:.1em;line-height:2.1;margin-top:24px;max-width:480px;opacity:0;animation:fade 1s .6s forwards}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;margin-top:40px;font-size:.82rem;font-weight:700;letter-spacing:.18em;color:#fff;background:var(–accent);padding:17px 48px;transition:all .4s;opacity:0;animation:fade 1s .8s forwards}
+.hero-cta:hover{background:var(–accent-warm);transform:translateY(-3px);box-shadow:0 14px 40px rgba(154,126,90,.2)}
 .hero-cta svg{width:15px;height:15px}
-.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:hf 1s 1.1s forwards}
-.hero-scroll span{font-size:.56rem;letter-spacing:.2em;color:var(--text3);font-family:var(--ff-d);font-weight:600}
-.hero-scroll-bar{width:1px;height:36px;background:linear-gradient(to bottom,var(--glow1),transparent);animation:pulse 2.4s infinite}
-@keyframes hf{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
-.story-s{position:relative;overflow:hidden}.story-s::before{content:'';position:absolute;top:10%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(139,124,240,0.04),transparent 60%);pointer-events:none}
-.story-b{max-width:660px;margin:0 auto}.story-p{font-size:.9rem;color:var(--text2);line-height:2.2;margin-bottom:20px}.story-p strong{color:var(--text);font-weight:600}
-.story-hl{font-family:var(--ff-jp);font-weight:600;font-size:clamp(.95rem,1.6vw,1.1rem);line-height:2;letter-spacing:.05em;color:var(--text);margin:40px 0;padding:28px 32px;border-left:2px solid var(--glow1);background:rgba(139,124,240,0.04);border-radius:0 var(--radius) var(--radius) 0}
-.story-stats{display:flex;gap:14px;margin:36px 0;flex-wrap:wrap}
-.story-stat{flex:1;min-width:140px;text-align:center;padding:24px 16px;background:var(--surf2);border:1px solid var(--border);border-radius:var(--radius)}
-.story-stat-n{font-family:var(--ff-d);font-size:1.5rem;font-weight:700;background:var(--grad-glow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
-.story-stat-l{font-size:.66rem;color:var(--text3);margin-top:6px}
-.story-end{margin-top:48px;text-align:center;padding:32px;background:var(--surf2);border:1px solid var(--border);border-radius:var(--radius)}
-.story-end p{font-family:var(--ff-jp);font-size:.95rem;font-weight:500;letter-spacing:.06em;line-height:1.9}
-.how-d{display:flex;align-items:center;justify-content:center;gap:0;margin-top:56px;flex-wrap:wrap}
-.how-n{display:flex;flex-direction:column;align-items:center;gap:12px;width:190px;text-align:center}
-.how-ic{width:68px;height:68px;border-radius:50%;background:var(--surf2);border:1px solid var(--border);display:grid;place-items:center;transition:all .4s}
-.how-n:hover .how-ic{border-color:var(--glow1);box-shadow:0 0 24px rgba(139,124,240,0.12)}
-.how-ic svg{width:26px;height:26px;stroke:var(--glow1);fill:none;stroke-width:1.5}
-.how-lb{font-family:var(--ff-d);font-size:.82rem;font-weight:700}.how-ds{font-size:.7rem;color:var(--text3);line-height:1.6}
-.how-ar{font-size:1rem;color:var(--text3);margin:0 14px;padding-top:8px}
-.cmp{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:56px;border-radius:var(--radius);overflow:hidden}
-.cmp-c{padding:36px 32px}.cmp-l{background:var(--surf);border:1px solid var(--border)}.cmp-r{background:rgba(139,124,240,0.04);border:1px solid var(--border2)}
-.cmp-c h3{font-family:var(--ff-d);font-size:.84rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:8px}
-.cmp-c h3 .dt{width:8px;height:8px;border-radius:50%}.cmp-l h3 .dt{background:var(--text3)}.cmp-r h3 .dt{background:var(--glow1)}
-.cmp-c li{font-size:.8rem;color:var(--text2);line-height:1.8;margin-bottom:6px;list-style:none;padding-left:18px;position:relative}
-.cmp-c li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%}.cmp-l li::before{background:var(--text3)}.cmp-r li::before{background:var(--glow1)}
-.cmp-vs{display:flex;align-items:center;justify-content:center;padding:0 8px;font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--text3);writing-mode:vertical-rl;background:var(--bg2)}
-.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
-.mc{background:var(--surf);border:1px solid var(--border);padding:32px 24px;border-radius:var(--radius);transition:all .45s;position:relative;overflow:hidden}
-.mc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-glow);opacity:0;transition:opacity .4s}
-.mc:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 0 80px rgba(139,124,240,0.08)}.mc:hover::before{opacity:1}
-.mc-i{width:44px;height:44px;border-radius:12px;background:rgba(139,124,240,0.08);display:grid;place-items:center;margin-bottom:18px}
-.mc-i svg{width:20px;height:20px;stroke:var(--glow1);fill:none;stroke-width:1.5}
-.mc h3{font-family:var(--ff-d);font-size:.88rem;font-weight:700;margin-bottom:8px}.mc p{font-size:.78rem;color:var(--text2);line-height:1.85}
-.fs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
-.fi{text-align:center;position:relative;padding:0 8px}.fi::after{content:'→';position:absolute;right:-14px;top:30px;font-size:1rem;color:var(--text3)}.fi:last-child::after{display:none}
-.fn{width:48px;height:48px;border-radius:50%;background:var(--grad-glow);color:var(--bg);font-family:var(--ff-d);font-size:1rem;font-weight:700;display:grid;place-items:center;margin:0 auto 14px;box-shadow:0 4px 20px rgba(139,124,240,0.2)}
-.fi h4{font-family:var(--ff-d);font-size:.82rem;font-weight:700;margin-bottom:6px}.fi p{font-size:.72rem;color:var(--text2);line-height:1.75}
-.wg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:48px;max-width:680px}
-.wt{display:flex;align-items:center;gap:10px;background:var(--surf);border:1px solid var(--border);border-radius:12px;padding:13px 18px;font-size:.82rem;color:var(--text2);font-weight:500;transition:all .3s}
-.wt:hover{border-color:var(--border2);background:rgba(139,124,240,0.04)}
-.wt svg{width:16px;height:16px;stroke:var(--glow1);fill:none;stroke-width:2;flex-shrink:0}
-.fl{margin-top:48px;max-width:700px}.fq-i{border-bottom:1px solid var(--border)}
-.fq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;gap:16px}
-.fq-q h4{font-size:.86rem;font-weight:600;line-height:1.5}
-.fq-ic{flex-shrink:0;width:26px;height:26px;border:1px solid var(--border2);border-radius:50%;display:grid;place-items:center;font-family:var(--ff-d);font-size:.9rem;color:var(--glow1);transition:transform .3s}
-.fq-i.open .fq-ic{transform:rotate(45deg)}.fq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}.fq-i.open .fq-a{max-height:300px}
-.fq-a p{font-size:.8rem;color:var(--text2);line-height:1.85;padding-bottom:18px}
-.reg{position:relative;overflow:hidden}.reg::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(139,124,240,0.06),transparent 60%);pointer-events:none}
-.reg .ct{position:relative;z-index:1}
-.rb{max-width:500px;margin:0 auto;background:var(--surf2);border:1px solid var(--border);border-radius:20px;padding:40px 36px;backdrop-filter:blur(8px)}
-.ei{display:flex;flex-direction:column}.er{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}.er:last-child{border-bottom:none}
-.en{width:26px;height:26px;border-radius:50%;background:var(--grad-glow);color:var(--bg);font-family:var(--ff-d);font-size:.78rem;font-weight:700;display:grid;place-items:center;flex-shrink:0;margin-top:2px}
-.el{font-size:.86rem;font-weight:600;line-height:1.4}.eh{font-size:.7rem;color:var(--text3);margin-top:2px}
-.rbtn{width:100%;padding:16px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:var(--ff-d);font-size:.84rem;font-weight:700;letter-spacing:.12em;color:var(--bg);background:var(--grad-glow);border-radius:50px;transition:all .45s;margin-top:24px;box-shadow:0 8px 28px rgba(139,124,240,0.2)}
-.rbtn:hover{box-shadow:0 16px 44px rgba(139,124,240,0.3);transform:translateY(-2px)}.rbtn svg{width:15px;height:15px}
-.stk{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:rgba(11,11,16,0.85);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:12px 28px;display:flex;justify-content:center}
-.stk a{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-d);font-size:.76rem;font-weight:700;letter-spacing:.12em;color:var(--bg);background:var(--grad-glow);padding:13px 36px;border-radius:50px;transition:all .4s;cursor:pointer;box-shadow:0 4px 20px rgba(139,124,240,0.15)}
-.stk a:hover{box-shadow:0 8px 32px rgba(139,124,240,0.25);transform:translateY(-2px)}.stk a svg{width:14px;height:14px}
-footer{padding:40px 28px 24px;text-align:center;border-top:1px solid var(--border)}
-.ft-b{font-family:var(--ff-d);font-size:.9rem;letter-spacing:.2em;font-weight:700;background:var(--grad-glow);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px}
-.ft-c{font-size:.62rem;color:var(--text3)}
-@media(max-width:768px){section{padding:72px 0}.story-stats{flex-direction:column;gap:10px}.how-d{flex-direction:column;gap:8px}.how-ar{transform:rotate(90deg);margin:4px 0}.cmp{grid-template-columns:1fr}.cmp-vs{writing-mode:horizontal-tb;padding:10px 0;text-align:center}.mg{grid-template-columns:1fr;gap:12px}.fs{grid-template-columns:1fr 1fr;gap:20px 16px}.fi::after{display:none}.wg{grid-template-columns:1fr}.rb{padding:32px 22px}.stk a{flex:1;justify-content:center;padding:13px 10px;font-size:.7rem}}
+@keyframes fade{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══ PHOTO STRIP ═══ */
+.photo-strip{width:100%;height:360px;overflow:hidden}
+.photo-strip img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ═══ VISION ═══ */
+.vision{position:relative;overflow:hidden}
+.vision-bg{position:absolute;inset:0;z-index:0}
+.vision-bg img{width:100%;height:100%;object-fit:cover;opacity:.12}
+.vision>.container{position:relative;z-index:1}
+.vision-statement{font-family:var(–ff-jp);font-weight:600;font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:2;letter-spacing:.08em;color:var(–text-primary);margin-bottom:36px;max-width:600px}
+.vision-body{font-size:.88rem;color:var(–text-body);line-height:2.1;max-width:600px;margin-bottom:20px}
+.vision-flow{display:flex;align-items:center;gap:0;margin-top:48px;flex-wrap:wrap;justify-content:center}
+.vision-node{text-align:center;width:200px;padding:24px 16px;background:var(–bg-card);border:1px solid var(–border);box-shadow:0 2px 12px rgba(0,0,0,.03)}
+.vision-node-ic{width:44px;height:44px;border-radius:50%;background:var(–accent-pale);display:grid;place-items:center;margin:0 auto 12px}
+.vision-node-ic svg{width:20px;height:20px;stroke:var(–accent);fill:none;stroke-width:1.5}
+.vision-node h4{font-size:.82rem;font-weight:700;color:var(–text-primary);margin-bottom:4px}
+.vision-node p{font-size:.72rem;color:var(–text-muted);line-height:1.5}
+.vision-arrow{font-family:var(–ff-display);font-size:1.4rem;color:var(–accent-light);margin:0 6px;padding-top:8px}
+.vision-result{text-align:center;margin-top:32px;padding:20px 28px;background:var(–accent-pale);border:1px solid var(–border-accent);display:inline-block}
+.vision-result p{font-family:var(–ff-jp);font-size:.92rem;font-weight:600;color:var(–accent);letter-spacing:.06em}
+
+/* ═══ WHAT — 図解：仕組み ═══ */
+.what-diagram{display:flex;align-items:center;justify-content:center;gap:0;margin-top:56px;flex-wrap:wrap}
+.what-node{display:flex;flex-direction:column;align-items:center;gap:12px;width:180px;text-align:center}
+.what-icon{width:72px;height:72px;border-radius:50%;background:var(–accent-pale);border:1.5px solid var(–border-accent);display:grid;place-items:center}
+.what-icon svg{width:30px;height:30px;stroke:var(–accent);fill:none;stroke-width:1.5}
+.what-label{font-size:.82rem;font-weight:700;color:var(–text-primary);line-height:1.5}
+.what-desc{font-size:.74rem;color:var(–text-muted);line-height:1.6}
+.what-arrow{font-family:var(–ff-display);font-size:1.6rem;color:var(–accent-light);margin:0 8px;padding-top:10px}
+
+/* ═══ MERIT — カード+アイコン ═══ */
+.merit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.merit{background:var(–bg-card);border:1px solid var(–border);padding:36px 28px;transition:all .4s;box-shadow:0 2px 12px rgba(0,0,0,.02)}
+.merit:hover{border-color:var(–border-accent);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.06)}
+.merit-ic{width:48px;height:48px;border-radius:12px;background:var(–accent-pale);display:grid;place-items:center;margin-bottom:20px}
+.merit-ic svg{width:22px;height:22px;stroke:var(–accent);fill:none;stroke-width:1.5}
+.merit h3{font-size:.92rem;font-weight:700;color:var(–text-primary);margin-bottom:10px}
+.merit p{font-size:.82rem;color:var(–text-body);line-height:1.85}
+
+/* ═══ COMPARE — ビフォーアフター ═══ */
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:56px;align-items:stretch}
+.compare-col{padding:36px 32px}
+.compare-bad{background:rgba(0,0,0,.02);border:1px solid rgba(0,0,0,.06)}
+.compare-good{background:var(–accent-pale);border:1px solid var(–border-accent)}
+.compare-col h3{font-size:.88rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.compare-col h3 .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.compare-bad h3 .dot{background:#c0b8b0}
+.compare-good h3 .dot{background:var(–accent)}
+.compare-col li{font-size:.82rem;color:var(–text-body);line-height:1.8;margin-bottom:6px;list-style:none;padding-left:18px;position:relative}
+.compare-col li::before{content:’’;position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%}
+.compare-bad li::before{background:#d0c8c0}
+.compare-good li::before{background:var(–accent)}
+.compare-vs{display:flex;align-items:center;justify-content:center;padding:0 4px;font-family:var(–ff-display);font-size:1.1rem;color:var(–text-muted);writing-mode:vertical-rl}
+
+/* ═══ FLOW — ステップ図解 ═══ */
+.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.flow-step{text-align:center;position:relative;padding:0 8px}
+.flow-step::after{content:‘→’;position:absolute;right:-14px;top:32px;font-family:var(–ff-display);font-size:1.2rem;color:var(–accent-light)}
+.flow-step:last-child::after{display:none}
+.flow-num{width:48px;height:48px;border-radius:50%;background:var(–accent);color:#fff;font-family:var(–ff-display);font-size:1.1rem;font-weight:500;display:grid;place-items:center;margin:0 auto 16px}
+.flow-step h4{font-size:.86rem;font-weight:700;color:var(–text-primary);margin-bottom:8px}
+.flow-step p{font-size:.76rem;color:var(–text-body);line-height:1.75}
+
+/* ═══ WHO ═══ */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px;max-width:700px}
+.who-tag{display:flex;align-items:center;gap:10px;background:var(–bg-card);border:1px solid var(–border);padding:14px 20px;font-size:.84rem;color:var(–text-body);font-weight:500}
+.who-tag svg{width:18px;height:18px;stroke:var(–accent);fill:none;stroke-width:2;flex-shrink:0}
+
+/* ═══ FAQ ═══ */
+.faq-list{margin-top:48px;max-width:720px}
+.faq-item{border-bottom:1px solid var(–border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:16px}
+.faq-q h4{font-size:.88rem;font-weight:700;color:var(–text-primary);line-height:1.5}
+.faq-ic{flex-shrink:0;width:26px;height:26px;border:1px solid var(–border-accent);border-radius:50%;display:grid;place-items:center;font-family:var(–ff-display);font-size:.95rem;color:var(–accent);transition:transform .3s}
+.faq-item.open .faq-ic{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{font-size:.82rem;color:var(–text-body);line-height:1.85;padding-bottom:20px}
+
+/* ═══ FORM ═══ */
+.form-wrap{max-width:520px;margin:0 auto}
+.form-box{background:var(–bg-card);border:1px solid var(–border);padding:40px 36px;box-shadow:0 4px 20px rgba(0,0,0,.03)}
+.fg{margin-bottom:22px}
+.fg label{display:block;font-size:.78rem;font-weight:700;color:var(–text-primary);margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:1px solid var(–border);background:var(–bg);font-family:var(–ff-body);font-size:.84rem;color:var(–text-primary);outline:none;transition:border-color .3s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(–accent)}
+.fg textarea{resize:vertical;min-height:72px}
+.fg-prefix{display:flex;align-items:center;border:1px solid var(–border);background:var(–bg)}
+.fg-prefix span{padding:11px 0 11px 14px;font-size:.84rem;color:var(–text-muted);flex-shrink:0}
+.fg-prefix input{border:none;padding-left:4px}
+.fg-prefix:focus-within{border-color:var(–accent)}
+.fg-note{font-size:.7rem;color:var(–text-muted);margin-bottom:20px}
+.form-btn{width:100%;padding:15px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:var(–ff-body);font-size:.84rem;font-weight:700;letter-spacing:.15em;color:#fff;background:var(–accent);transition:all .4s}
+.form-btn:hover{background:var(–accent-warm)}
+.form-btn svg{width:15px;height:15px}
+.form-ok{display:none;text-align:center;padding:28px 0 4px}
+.form-ok.on{display:block}
+.form-ok p{font-size:.86rem;color:var(–text-primary);line-height:1.85;margin-bottom:6px}
+.form-ok p:first-child{font-size:1.05rem;font-weight:700;color:var(–accent);margin-bottom:14px}
+
+/* ═══ ENTRY LIST ═══ */
+.entry-items{display:flex;flex-direction:column;gap:0}
+.entry-row{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(–border)}
+.entry-row:last-child{border-bottom:none}
+.entry-num{width:28px;height:28px;border-radius:50%;background:var(–accent);color:#fff;font-family:var(–ff-display);font-size:.82rem;font-weight:500;display:grid;place-items:center;flex-shrink:0;margin-top:2px}
+.entry-label{font-size:.88rem;font-weight:700;color:var(–text-primary);line-height:1.4}
+.entry-hint{font-size:.74rem;color:var(–text-muted);margin-top:2px}
+
+/* ═══ STICKY ═══ */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid var(–border);padding:12px 28px;display:flex;justify-content:center;gap:12px}
+.sticky a{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.14em;color:#fff;background:var(–accent);padding:13px 32px;transition:all .35s}
+.sticky a:hover{background:var(–accent-warm)}
+.sticky a svg{width:14px;height:14px}
+.sticky .s-mail{background:transparent;color:var(–accent);border:1px solid var(–border-accent)}
+.sticky .s-mail:hover{background:var(–accent-pale)}
+
+/* ═══ FOOTER ═══ */
+footer{border-top:1px solid var(–border);padding:40px 28px 24px;text-align:center}
+.ft-brand{font-family:var(–ff-display);font-size:1rem;letter-spacing:.25em;color:var(–accent);margin-bottom:16px;font-weight:500}
+.ft-copy{font-size:.66rem;color:var(–text-muted)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:768px){
+section{padding:72px 0}
+.vision-flow{flex-direction:column;gap:12px}
+.vision-arrow{transform:rotate(90deg);margin:4px 0}
+.photo-strip{height:220px}
+.what-diagram{flex-direction:column;gap:8px}
+.what-arrow{writing-mode:horizontal-tb;transform:rotate(90deg);margin:4px 0}
+.merit-grid{grid-template-columns:1fr;gap:14px}
+.compare{grid-template-columns:1fr;gap:0}
+.compare-vs{writing-mode:horizontal-tb;padding:12px 0;text-align:center}
+.flow-steps{grid-template-columns:1fr 1fr;gap:24px 16px}
+.flow-step::after{display:none}
+.who-grid{grid-template-columns:1fr}
+.form-box{padding:32px 24px}
+.sticky{gap:8px;padding:12px 16px}
+.sticky a{flex:1;justify-content:center;padding:13px 10px;font-size:.72rem;letter-spacing:.1em}
+}
 </style>
+
 </head>
 <body>
-<div class="stk"><a onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'});return false;">無料で登録する<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a></div>
-<section class="hero"><div class="hero-badge">SELENE CREATORS</div><h1>あなたの発信を、<br><em>仕事に変える。</em></h1><p class="hero-lead">有償案件・報酬交渉・ブランドマッチング。<br>SNSで発信するすべての人が、<br>もっと自由に活躍できるコミュニティ。</p><a onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'});return false;" class="hero-cta">無料で登録する<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a><div class="hero-scroll"><span>SCROLL</span><div class="hero-scroll-bar"></div></div></section>
+
+<!-- ═══ STICKY ═══ -->
+
+<div class="sticky">
+  <a onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'});return false;" style="cursor:pointer;">
+    クリエイター登録
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+  </a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+
+<section class="hero">
+  <div class="hero-badge">For Creators</div>
+  <h1>あなたの発信力を、<br><i>ブランドの力</i>に。</h1>
+  <p class="hero-lead">事務所に入らなくても、案件は届く。<br>SELENE CREATORSは、美容・ライフスタイル系<br>クリエイターのためのコミュニティです。</p>
+  <a onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'});return false;" class="hero-cta" style="cursor:pointer;">
+    登録する
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+  </a>
+</section>
+
+<!-- ═══ VISION — 背景・想い ═══ -->
+
+<section class="vision">
+  <div class="vision-bg">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80" alt="">
+  </div>
+  <div class="container">
+    <div class="rv">
+      <div class="sec-label">Our Vision</div>
+      <h2 class="sec-title">なぜ、この活動をしているのか。</h2>
+    </div>
+    <div class="rv d1">
+      <p class="vision-statement">SNS業界とインフルエンサー市場を、<br>もっと健全に、もっと面白くしたい。</p>
+      <p class="vision-body">今、小〜中規模のブランドが抱える課題があります。インフルエンサーに商品を提供しても投稿されない、大手代理店には予算が合わない、誰に頼めばいいかわからない。</p>
+      <p class="vision-body">一方で、クリエイター側にも課題があります。自分に合う案件が見つからない、報酬の交渉が難しい、信頼できる窓口がない。</p>
+      <p class="vision-body">SELENE CREATORSは、この両方の課題を解決するために生まれました。私たちが間に入り、信頼できるクリエイターだけをブランドに紹介する。その結果、発信する側もブランド側も、市場全体が盛り上がる。</p>
+    </div>
+    <div class="vision-flow rv d2">
+      <div class="vision-node">
+        <div class="vision-node-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h4>信頼できる人だけを紹介</h4>
+        <p>SELENEの自社案件で<br>実績を確認済み</p>
+      </div>
+      <div class="vision-arrow">→</div>
+      <div class="vision-node">
+        <div class="vision-node-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        </div>
+        <h4>ブランドの成長を支える</h4>
+        <p>小〜中規模ブランドに<br>合う施策を実現</p>
+      </div>
+      <div class="vision-arrow">→</div>
+      <div class="vision-node">
+        <div class="vision-node-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        </div>
+        <h4>市場全体が盛り上がる</h4>
+        <p>クリエイターもブランドも<br>一緒に成長</p>
+      </div>
+    </div>
+    <div class="rv d3" style="text-align:center;margin-top:36px">
+      <div class="vision-result">
+        <p>発信する人と、届けたい人をつなぐ。<br>それがSELENE CREATORSの役割です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="hr"></div>
-<section class="story-s"><div class="ct"><div class="rv tc"><div class="sl">Our Story</div><h2 class="sh">SELENE CREATORSが生まれた理由</h2></div><div class="story-b rv d1"><p class="story-p">アクセサリーブランド「SELENE」を運営する中で、多くの発信者の方とお仕事をしてきました。<strong>数字だけでは見えない「人となり」を知ることができた</strong>のは、大きな財産でした。</p><div class="story-stats"><div class="story-stat"><div class="story-stat-n">3兆円</div><div class="story-stat-l">D2C・スモールブランド市場</div></div><div class="story-stat"><div class="story-stat-n">1,600億円超</div><div class="story-stat-l">インフルエンサー市場予測</div></div><div class="story-stat"><div class="story-stat-n">80%</div><div class="story-stat-l">国民のSNS利用率</div></div></div><p class="story-p">これだけ市場が広がっているのに、<strong>恩恵を受けているのはまだ大手の事務所や代理店が中心</strong>。個人で活動する発信者が、自分に合う案件に出会える場はまだ足りていません。</p><div class="story-hl">SNSで発信するすべての人が、<br>もっと自由に活躍できる世界をつくりたい。</div><p class="story-p">信頼できる方へ有償案件をご紹介していく — それがSELENE CREATORSです。報酬や条件の交渉も代行。あなたは発信に集中できます。</p><div class="story-end"><p>発信する人と、届けたい人をつなぐ。<br>一緒に市場を盛り上げてくれる仲間を探しています。</p></div></div></div></section>
-<div class="hr"></div>
-<section><div class="ct tc"><div class="rv"><div class="sl">How It Works</div><h2 class="sh">仕組みはシンプル。</h2><p class="ss">ブランドとあなたの間に私たちが入り、合う有償案件をお届けします。</p></div><div class="how-d rv d1"><div class="how-n"><div class="how-ic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></div><div class="how-lb">ブランド</div><div class="how-ds">スモールブランド<br>D2C企業</div></div><div class="how-ar">→</div><div class="how-n"><div class="how-ic" style="border-color:var(--glow1);background:rgba(139,124,240,0.06)"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3C6.5 3 2 6.58 2 11a7.27 7.27 0 004 6.35V21l3.13-1.74A10.48 10.48 0 0012 19.5c5.5 0 10-3.58 10-8S17.5 3 12 3z"/></svg></div><div class="how-lb">SELENE CREATORS</div><div class="how-ds">マッチング<br>報酬交渉を代行</div></div><div class="how-ar">→</div><div class="how-n"><div class="how-ic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div><div class="how-lb">あなた</div><div class="how-ds">報酬+商品が届く<br>合う案件だけ受ける</div></div></div></div></section>
-<div class="hr"></div>
-<section><div class="ct"><div class="rv tc"><div class="sl">Comparison</div><h2 class="sh">自分で探す vs コミュニティに参加</h2></div><div class="cmp rv d1"><div class="cmp-c cmp-l"><h3><span class="dt"></span>自分で探す</h3><ul><li>案件を探す時間がかかる</li><li>世界観に合わない依頼も多い</li><li>報酬交渉を自分でやる必要</li><li>トラブル時に間に入る人がいない</li><li>実績が蓄積しにくい</li></ul></div><div class="cmp-vs">VS</div><div class="cmp-c cmp-r"><h3><span class="dt"></span>SELENE CREATORSなら</h3><ul><li>あなたに合う案件だけが届く</li><li>世界観を理解したマッチング</li><li>報酬交渉は私たちが代行</li><li>トラブル時は間に入って対応</li><li>実績がポートフォリオになる</li></ul></div></div></div></section>
-<div class="hr"></div>
-<section><div class="ct"><div class="rv tc"><div class="sl">Merit</div><h2 class="sh">参加するメリット</h2></div><div class="mg"><div class="mc rv d1"><div class="mc-i"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><h3>世界観に合う案件だけ</h3><p>フォロワー数だけで判断しません。発信スタイルに合ったブランドだけをマッチング。</p></div><div class="mc rv d2"><div class="mc-i"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg></div><h3>報酬+商品が届く</h3><p>有償案件がメイン。報酬の調整は私たちが代行。商品も届くので実際に使って紹介できます。</p></div><div class="mc rv d3"><div class="mc-i"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div><h3>縛りゼロ・自由に活動</h3><p>事務所ではありません。掛け持ちも自由。案件ごとに受けるか選べます。</p></div><div class="mc rv d1"><div class="mc-i"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><h3>実績がポートフォリオに</h3><p>投稿実績が蓄積され、次のブランド案件への信頼につながります。</p></div><div class="mc rv d2"><div class="mc-i"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div><h3>DMで完結</h3><p>面倒な書類や契約書はなし。案件の相談から確定まで、DMで簡潔にやりとり。</p></div><div class="mc rv d3"><div class="mc-i"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h3>事務所所属でもOK</h3><p>副業・個人活動が許可されている方なら、事務所に入っていても参加できます。</p></div></div></div></section>
-<div class="hr"></div>
-<section><div class="ct tc"><div class="rv"><div class="sl">Flow</div><h2 class="sh">参加の流れ</h2><p class="ss">登録から初回案件まで、最短1週間。</p></div><div class="fs rv d1"><div class="fi"><div class="fn">1</div><h4>登録</h4><p>メアド+SNSアカウントを<br>送信するだけ（30秒）</p></div><div class="fi"><div class="fn">2</div><h4>審査・DM連絡</h4><p>アカウントを確認後<br>DMでご連絡</p></div><div class="fi"><div class="fn">3</div><h4>SELENE案件</h4><p>まずはSELENEの<br>PRで相性確認</p></div><div class="fi"><div class="fn">4</div><h4>外部案件スタート</h4><p>本登録後、有償の<br>ブランド案件へ</p></div></div></div></section>
-<div class="hr"></div>
-<section><div class="ct"><div class="rv"><div class="sl">Who</div><h2 class="sh">こんな方を募集しています</h2></div><div class="wg rv d1"><div class="wt"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>フォロワー500人以上</div><div class="wt"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Instagram or TikTokで発信中</div><div class="wt"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>商品提供後きちんとPR投稿できる</div><div class="wt"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>DMに丁寧に対応できる</div><div class="wt"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>事務所所属でもOK</div><div class="wt"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>ジャンル不問</div></div></div></section>
-<div class="hr"></div>
-<section><div class="ct"><div class="rv"><div class="sl">FAQ</div><h2 class="sh">よくある質問</h2></div><div class="fl rv d1"><div class="fq-i"><div class="fq-q" onclick="this.parentElement.classList.toggle('open')"><h4>費用はかかりますか？</h4><div class="fq-ic">+</div></div><div class="fq-a"><p>活動者側の費用は一切かかりません。商品も無償で提供されます。</p></div></div><div class="fq-i"><div class="fq-q" onclick="this.parentElement.classList.toggle('open')"><h4>報酬はありますか？</h4><div class="fq-ic">+</div></div><div class="fq-a"><p>はい、有償案件がメインです。報酬額は案件ごとに異なりますが、予算の調整は私たちが行います。</p></div></div><div class="fq-i"><div class="fq-q" onclick="this.parentElement.classList.toggle('open')"><h4>フォロワーが少なくても参加できますか？</h4><div class="fq-ic">+</div></div><div class="fq-a"><p>500人以上が目安ですが、投稿の質や世界観を重視しています。</p></div></div><div class="fq-i"><div class="fq-q" onclick="this.parentElement.classList.toggle('open')"><h4>案件は必ず受けないといけませんか？</h4><div class="fq-ic">+</div></div><div class="fq-a"><p>いいえ。案件ごとに自由に選べます。合わない案件はお断りいただいてOKです。</p></div></div><div class="fq-i"><div class="fq-q" onclick="this.parentElement.classList.toggle('open')"><h4>事務所に所属していても参加できますか？</h4><div class="fq-ic">+</div></div><div class="fq-a"><p>はい。副業や個人活動が事務所から許可されている方であれば問題ありません。</p></div></div></div></div></section>
-<div class="hr"></div>
-<section class="reg" id="register" style="padding-bottom:160px;scroll-margin-top:20px;"><div class="ct"><div class="rv tc"><div class="sl">Entry</div><h2 class="sh">登録する</h2><p class="ss">ボタンを押すとメールアプリが開きます。フォーマットを記入して送信するだけ。</p><p style="font-size:.7rem;color:var(--text3);margin-top:8px;margin-bottom:48px">※住所は本登録時にお伺いします。この段階では不要です。</p></div><div class="rv d1"><div class="rb"><h3 style="font-family:var(--ff-d);font-size:.88rem;font-weight:700;margin-bottom:20px;">記入いただく内容</h3><div class="ei"><div class="er"><div class="en">1</div><div><div class="el">お名前（活動名可）</div><div class="eh">必須</div></div></div><div class="er"><div class="en">2</div><div><div class="el">メールアドレス</div><div class="eh">必須</div></div></div><div class="er"><div class="en">3</div><div><div class="el">Instagramアカウント</div><div class="eh">必須 — @付きID</div></div></div><div class="er"><div class="en">4</div><div><div class="el">TikTokアカウント</div><div class="eh">任意</div></div></div><div class="er"><div class="en">5</div><div><div class="el">活動ジャンル</div><div class="eh">自由記入</div></div></div><div class="er"><div class="en">6</div><div><div class="el">ひとこと</div><div class="eh">任意</div></div></div></div><button type="button" class="rbtn" id="regBtn">無料で登録する<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button><p style="font-size:.68rem;color:var(--text3);text-align:center;margin-top:14px;">メールアプリが開きます。記入して送信するだけでOK。</p></div></div></div></section>
-<footer><div class="ft-b">SELENE CREATORS</div><p class="ft-c">&copy; 2026 SELENE CREATORS. All rights reserved.</p></footer>
+
+<!-- 📷 クリエイター撮影イメージ -->
+
+<div class="photo-strip rv">
+  <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1400&q=80" alt="" style="width:100%;height:100%;object-fit:cover;">
+</div>
+
+<!-- ═══ WHAT — 仕組み図解 ═══ -->
+
+<section class="sec-warm">
+  <div class="container sec-center">
+    <div class="rv">
+      <div class="sec-label">How It Works</div>
+      <h2 class="sec-title">SELENE CREATORSの仕組み</h2>
+      <p class="sec-sub">ブランドとクリエイターの間に私たちが入り、あなたに合う案件だけをお届けします。</p>
+    </div>
+    <div class="what-diagram rv d1">
+      <div class="what-node">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        </div>
+        <div class="what-label">ブランド</div>
+        <div class="what-desc">美容・ライフスタイル系の<br>企業・D2Cブランド</div>
+      </div>
+      <div class="what-arrow">→</div>
+      <div class="what-node">
+        <div class="what-icon" style="background:rgba(154,126,90,.15);border-color:var(--accent)">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3C6.5 3 2 6.58 2 11a7.27 7.27 0 004 6.35V21l3.13-1.74A10.48 10.48 0 0012 19.5c5.5 0 10-3.58 10-8S17.5 3 12 3z"/></svg>
+        </div>
+        <div class="what-label">SELENE CREATORS</div>
+        <div class="what-desc">案件をマッチング<br>やりとりを仲介</div>
+      </div>
+      <div class="what-arrow">→</div>
+      <div class="what-node">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <div class="what-label">あなた</div>
+        <div class="what-desc">商品が届く → 投稿する<br>世界観に合う案件だけ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 📷 コスメ・美容イメージ -->
+
+<div class="photo-strip rv">
+  <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1400&q=80" alt="" style="width:100%;height:100%;object-fit:cover;">
+</div>
+
+<!-- ═══ COMPARE — ビフォーアフター ═══ -->
+
+<section>
+  <div class="container">
+    <div class="rv sec-center">
+      <div class="sec-label">Comparison</div>
+      <h2 class="sec-title">自分で案件を探す vs<br>SELENE CREATORSに参加する</h2>
+    </div>
+    <div class="compare rv d1">
+      <div class="compare-col compare-bad">
+        <h3><span class="dot"></span>自分で探す場合</h3>
+        <ul>
+          <li>案件を自分で探す時間がかかる</li>
+          <li>世界観に合わない案件も多い</li>
+          <li>条件交渉を自分でやる必要がある</li>
+          <li>トラブル時に誰も守ってくれない</li>
+          <li>実績が蓄積しにくい</li>
+        </ul>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-col compare-good">
+        <h3><span class="dot"></span>SELENE CREATORSなら</h3>
+        <ul>
+          <li>あなたに合う案件だけが届く</li>
+          <li>世界観を理解した上でマッチング</li>
+          <li>報酬・予算の交渉はSELENEが代行</li>
+          <li>トラブル時はSELENEが間に入る</li>
+          <li>実績がポートフォリオになる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MERIT ═══ -->
+
+<section class="sec-warm">
+  <div class="container">
+    <div class="rv sec-center">
+      <div class="sec-label">Merit</div>
+      <h2 class="sec-title">参加するメリット</h2>
+    </div>
+    <div class="merit-grid">
+      <div class="merit rv d1">
+        <div class="merit-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3>世界観に合う案件だけ</h3>
+        <p>フォロワー数だけで判断しません。あなたの発信スタイルに合ったブランドだけをマッチング。</p>
+      </div>
+      <div class="merit rv d2">
+        <div class="merit-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3>縛りなし・自由に活動</h3>
+        <p>事務所のような契約縛りはなし。案件ごとに参加するか自分で決められます。</p>
+      </div>
+      <div class="merit rv d3">
+        <div class="merit-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+        </div>
+        <h3>報酬+商品が届く</h3>
+        <p>有償案件がメイン。報酬の調整はSELENEが間に入って行います。商品も提供されるので、実際に使った上で紹介できます。</p>
+      </div>
+      <div class="merit rv d1">
+        <div class="merit-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>実績がポートフォリオに</h3>
+        <p>SELENEでの投稿実績が蓄積。次のブランド案件への信頼につながります。</p>
+      </div>
+      <div class="merit rv d2">
+        <div class="merit-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <h3>DMで完結・面倒なし</h3>
+        <p>書類や契約書はなし。案件の相談から確定まで、Instagram DMで簡潔にやりとり。</p>
+      </div>
+      <div class="merit rv d3">
+        <div class="merit-ic">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3>横のつながり</h3>
+        <p>同じ領域で活動するクリエイター同士がゆるくつながる場。コラボの機会も。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FLOW — ステップ図解 ═══ -->
+
+<section>
+  <div class="container">
+    <div class="rv sec-center">
+      <div class="sec-label">Flow</div>
+      <h2 class="sec-title">参加の流れ</h2>
+      <p class="sec-sub">応募から初回案件まで、最短1週間。</p>
+    </div>
+    <div class="flow-steps rv d1">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <h4>エントリー登録</h4>
+        <p>下のフォームから<br>メアド+Instagram名を<br>送信（30秒）</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <h4>審査・DM連絡</h4>
+        <p>登録順にアカウントを確認<br>通過した方にDMで連絡<br>※時間がかかる場合あり</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <h4>SELENE案件</h4>
+        <p>まずはSELENEの<br>アクセサリーPRから<br>商品は無償提供</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h4>本登録・外部案件</h4>
+        <p>実績確認後、本登録<br>住所を登録して<br>外部ブランド案件へ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 📷 チームワーク・コラボイメージ -->
+
+<div class="photo-strip rv">
+  <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80" alt="" style="width:100%;height:100%;object-fit:cover;">
+</div>
+
+<!-- ═══ WHO ═══ -->
+
+<section>
+  <div class="container">
+    <div class="rv">
+      <div class="sec-label">Who</div>
+      <h2 class="sec-title">こんな方を募集しています</h2>
+    </div>
+    <div class="who-grid rv d1">
+      <div class="who-tag">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        フォロワー500人以上
+      </div>
+      <div class="who-tag">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        美容・コスメ・ライフスタイル系
+      </div>
+      <div class="who-tag">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        商品提供後きちんとPR投稿できる
+      </div>
+      <div class="who-tag">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        DMに丁寧に対応できる
+      </div>
+      <div class="who-tag">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        事務所所属でもOK（副業・個人活動が許可されている方）
+      </div>
+      <div class="who-tag">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        Instagram or TikTokで発信中
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+
+<section class="sec-warm">
+  <div class="container">
+    <div class="rv">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">よくある質問</h2>
+    </div>
+    <div class="faq-list rv d1">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>費用はかかりますか？</h4><div class="faq-ic">+</div></div><div class="faq-a"><p>クリエイター側の費用は一切かかりません。商品も無償で提供されます。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>審査にはどれくらいかかりますか？</h4><div class="faq-ic">+</div></div><div class="faq-a"><p>登録順に審査を行っています。通常1〜2週間以内にDMでご連絡しますが、応募多数の場合はお時間をいただくことがあります。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>住所はいつ必要ですか？</h4><div class="faq-ic">+</div></div><div class="faq-a"><p>エントリー時点では不要です。審査通過後、商品をお届けする本登録の段階でお届け先住所をお伺いします。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>フォロワーが少なくても応募できますか？</h4><div class="faq-ic">+</div></div><div class="faq-a"><p>500人以上を目安にしていますが、投稿の質や世界観を重視しています。まずはお気軽にどうぞ。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>案件は必ず受けないといけませんか？</h4><div class="faq-ic">+</div></div><div class="faq-a"><p>いいえ。案件ごとに自由に選べます。世界観に合わない案件はお断りいただいてOKです。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>報酬はありますか？</h4><div class="faq-ic">+</div></div><div class="faq-a"><p>はい、有償案件がメインです。案件ごとに報酬額が異なりますが、予算の調整はSELENEが間に入って行います。商品提供のみの案件もありますが、あくまで一部です。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>投稿内容は指定されますか？</h4><div class="faq-ic">+</div></div><div class="faq-a"><p>PR表記の明示など基本ルールはありますが、表現や見せ方はあなたの自由です。</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>事務所に所属していても参加できますか？</h4><div class="faq-ic">+</div></div><div class="faq-a"><p>はい、歓迎です。副業や個人での活動が事務所から許可されている方であれば問題ありません。事前にご自身で所属先の規約をご確認ください。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 📷 スマホ撮影・クリエイターイメージ -->
+
+<div class="photo-strip rv">
+  <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1400&q=80" alt="" style="width:100%;height:100%;object-fit:cover;">
+</div>
+
+<!-- ═══ REGISTER ═══ -->
+
+<section id="register" style="padding-bottom:160px;scroll-margin-top:20px;">
+  <div class="container">
+    <div class="rv sec-center">
+      <div class="sec-label">Entry</div>
+      <h2 class="sec-title">クリエイター登録</h2>
+      <p class="sec-sub">以下を入力して送信してください。<br>登録順に審査を行い、Instagram DMでご連絡いたします。</p>
+      <p style="font-size:.74rem;color:var(--text-muted);margin-top:8px;margin-bottom:48px">※住所は本登録時にお伺いします。この段階では不要です。</p>
+    </div>
+    <div class="form-wrap rv d1">
+      <form class="form-box" id="regForm" action="https://formspree.io/f/mrerqdoa" method="POST">
+        <input type="hidden" name="_subject" value="【SELENE CREATORS】クリエイター登録">
+        <input type="hidden" name="_replyto" id="replyto">
+        <div class="fg"><label>お名前（ニックネーム可）<span style="color:var(--accent);margin-left:4px;">*</span></label><input type="text" name="お名前" placeholder="例：Yuki" required></div>
+        <div class="fg"><label>メールアドレス<span style="color:var(--accent);margin-left:4px;">*</span></label><input type="email" name="メールアドレス" id="emailInput" placeholder="例：you@example.com" required></div>
+        <div class="fg"><label>Instagramアカウント名<span style="color:var(--accent);margin-left:4px;">*</span></label><div class="fg-prefix"><span>@</span><input type="text" name="Instagram" placeholder="例：your_account" required></div></div>
+        <div class="fg"><label>TikTokアカウント名（任意）</label><div class="fg-prefix"><span>@</span><input type="text" name="TikTok" placeholder="例：your_tiktok"></div></div>
+        <div class="fg"><label>発信ジャンル</label><select name="発信ジャンル"><option value="">選択してください</option><option value="美容・コスメ">美容・コスメ</option><option value="スキンケア">スキンケア</option><option value="ライフスタイル">ライフスタイル</option><option value="ファッション">ファッション</option><option value="その他">その他</option></select></div>
+        <div class="fg"><label>ひとこと（任意）</label><textarea name="ひとこと" rows="3" placeholder="自己紹介や意気込みなど"></textarea></div>
+        <p class="fg-note">送信いただいた情報は、審査およびご連絡の目的にのみ使用いたします。</p>
+        <button type="submit" class="form-btn" id="submitBtn">
+          登録する
+          <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </button>
+      </form>
+      <div class="form-ok" id="formOk">
+        <p>✓ 登録ありがとうございます！</p>
+        <p>審査のうえ、Instagram DMでご連絡いたします。<br>応募多数の場合はお時間をいただくことがありますが、<br>必ず全員にご連絡いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+
+<footer>
+  <div class="ft-brand">SELENE CREATORS</div>
+  <p class="ft-copy">&copy; 2026 SELENE CREATORS. All rights reserved.</p>
+</footer>
+
 <script>
 document.body.classList.add('js');
-try{var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('show')})},{threshold:.05});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})}catch(e){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('show')})}
+try{
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('show')})},{threshold:.05});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+}catch(e){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('show')})}
 setTimeout(function(){document.querySelectorAll('.rv:not(.show)').forEach(function(el){el.classList.add('show')})},2000);
-document.getElementById('regBtn').addEventListener('click',function(){var a='selene.official.japan';var b='gmail.com';var to=a+String.fromCharCode(64)+b;var s=encodeURIComponent('【SELENE CREATORS】登録');var body=encodeURIComponent('【SELENE CREATORS 登録】\n\n以下をご記入ください。\n\n――――――――――――――――\n\n1. お名前（活動名可）：\n\n2. メールアドレス：\n\n3. Instagram：@\n\n4. TikTok（任意）：@\n\n5. 活動ジャンル：\n\n6. ひとこと（任意）：\n\n――――――――――――――――\n\n記入後、そのまま送信してください。\n登録順に審査し、Instagram DMでご連絡します。');window.location.href='mai'+'lto:'+to+'?subject='+s+'&body='+body});
+
+// Form submission
+var form = document.getElementById('regForm');
+form.addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var btn = document.getElementById('submitBtn');
+  var emailVal = document.getElementById('emailInput').value;
+  document.getElementById('replyto').value = emailVal;
+  btn.textContent = '送信中...';
+  btn.disabled = true;
+
+  var data = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(res){
+    if(res.ok){
+      form.style.display = 'none';
+      document.getElementById('formOk').classList.add('on');
+    } else {
+      alert('送信に失敗しました。お手数ですが selene.official.japan@gmail.com まで直接ご連絡ください。');
+      btn.textContent = '登録する';
+      btn.disabled = false;
+    }
+  }).catch(function(){
+    alert('通信エラーが発生しました。お手数ですが selene.official.japan@gmail.com まで直接ご連絡ください。');
+    btn.textContent = '登録する';
+    btn.disabled = false;
+  });
+});
 </script>
+
 </body>
 </html>
